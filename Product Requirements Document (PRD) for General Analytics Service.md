@@ -72,3 +72,24 @@ This document specifies the requirements for a general analytics service capable
 - Customers should report high satisfaction with the platform's flexibility, performance, and the actionable insights provided.
 - The system must demonstrate scalability, handling increased data volumes and customer growth without degradation in performance.
 
+
+
+
+
+
+Here's the revised table with a focus on databases that best match the PRD requirements for a general analytics service:
+
+| Database               | Data Model        | Scalability       | Performance       | Consistency      | Availability     | Security        | Cost             | Community and Support | Maturity and Reliability | Use Case and Requirements        | Simplicity of Implementation | Web Interface for Config | Open Source Data Visualization Supported | Overall Ranking Rate | Top Open Source Data Visualization Tools  | Alignment with PRD           |
+|------------------------|-------------------|-------------------|-------------------|------------------|------------------|-----------------|------------------|------------------------|--------------------------|---------------------------------|---------------------------|--------------------------|------------------------------------------|----------------------|-------------------------------------------|-----------------------------|
+| TimescaleDB            | Time Series       | High              | High              | Strong           | High             | High            | Variable         | Strong                 | Moderate                 | General Analytics, IoT            | Moderate                    | Limited                   | Moderate                                 | High                 | Grafana, Apache Superset                 | High                        |
+| ClickHouse             | Columnar          | High              | Very High         | Eventual         | High             | Moderate        | Low to Moderate  | Growing                | Moderate                 | Analytics, Log Management         | Moderate                    | Yes                      | High                                     | High                 | Grafana, Redash, Apache Superset         | High                        |
+| Druid                  | Columnar          | High              | High              | Eventual         | High             | High            | High             | Strong                 | High                     | Analytics, OLAP                   | Low                        | Yes                      | Moderate                                 | High                 | Apache Superset, Grafana                | High                        |
+| QuestDB                | Time Series       | Moderate          | Very High         | Strong           | Moderate         | Moderate        | Low              | Emerging               | Early                    | Real-time Analytics               | High                       | Yes                      | Moderate                                 | Moderate             | Grafana, Apache Superset                 | Moderate                    |
+
+### Notes on Alignment with PRD:
+- **TimescaleDB**: Its ability to handle time-series data with high performance and scalability makes it a strong candidate for analytics involving time-based metrics. It's designed for extensibility, aligning with the PRD's requirement for a customizable and scalable data storage solution.
+- **ClickHouse**: Known for its high performance and scalability, ClickHouse can efficiently manage large datasets and complex queries, making it suitable for real-time analytics. Its columnar data model is optimized for analytics, matching the PRD's goals for high-performance data processing.
+- **Druid**: Offers high performance and scalability for real-time analytics on large datasets. It supports multi-tenancy and can handle a variety of analytics use cases, from user behavior analysis to performance metrics. Its complex setup might challenge simplicity requirements but offers powerful analytics capabilities.
+- **QuestDB**: While offering high performance for real-time analytics, its moderate scalability might be a limiting factor for very large deployments. However, it's a strong contender for projects with high-performance real-time analytics needs on a moderate scale.
+
+For the General Analytics Service described in the PRD, **ClickHouse** and **Druid** stand out as the top choices due to their high scalability, performance, and support for real-time analytics. TimescaleDB also presents a compelling option, especially for projects that can benefit from its time-series optimizations. The selection should consider specific project requirements, including the scale of data, real-time processing needs, and the complexity of analytics scenarios.
